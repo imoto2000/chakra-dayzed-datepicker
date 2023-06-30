@@ -20,7 +20,8 @@ import {
 } from './utils/commonTypes';
 
 export interface SingleDatepickerProps extends DatepickerProps {
-  date?: Date;
+  initDate?: Date | null ;
+  date?: Date | null;
   onDateChange: (date: Date) => void;
   configs?: DatepickerConfigs;
   disabled?: boolean;
@@ -52,6 +53,7 @@ export const SingleDatepicker: React.FC<SingleDatepickerProps> = ({
   ...props
 }) => {
   const {
+    initDate,
     date: selectedDate,
     name,
     disabled,
@@ -124,12 +126,13 @@ export const SingleDatepicker: React.FC<SingleDatepickerProps> = ({
         >
           <PopoverBody {...propsConfigs?.popoverCompProps?.popoverBodyProps}>
             <FocusLock>
-              <CalendarPanel
+
+            <CalendarPanel
                 dayzedHookProps={{
                   showOutsideDays: true,
                   onDateSelected: handleOnDateSelected,
-                  selected: selectedDate,
-                  date: dateInView,
+                  selected: dateInView || initDate || new Date(),
+                  date: dateInView || initDate || new Date(),
                   minDate: minDate,
                   maxDate: maxDate,
                   offset: offset,
