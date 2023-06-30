@@ -19,14 +19,14 @@ const App = () => {
   // const [isSingleChecked, setSingleCheck] = useState(true);
 
 
-const onDateChange = (d: Date) => {
+// const onDateChange = (d: Date) => {
 
-console.log(">>>>>>> d:",d);
-console.log(">>>>>>> date:",new Date(d));
+// console.log(">>>>>>> d:",d);
+// console.log(">>>>>>> date:",new Date(d));
 
-setDate(new Date(d));
-return new Date(d);
-}
+// setDate(new Date(d));
+// return new Date(d);
+// }
   
   return (
     <>
