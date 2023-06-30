@@ -20,6 +20,7 @@ import {
   TabPanels,
   Tabs,
   Text,
+  Textarea,
   ThemeConfig,
   useColorMode,
   VStack,
@@ -42,12 +43,17 @@ const offsets: FirstDayOfWeek[] = [0, 1, 2, 3, 4, 5, 6];
 
 const App = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const demoDate = new Date();
+  // const demoDate = new Date();
+  const demoDate = new Date(1999, 4, 1);
+
   const [date, setDate] = useState(demoDate);
+
   const [selectedDates, setSelectedDates] = useState<Date[]>([
     new Date(),
     new Date(),
   ]);
+  
+  
   const [firstDayOfWeek, setFirstDayOfWeek] = useState<FirstDayOfWeek>(1);
   const [isSingleChecked, setSingleCheck] = useState(true);
   const [isRangeChecked, setRangeCheck] = useState(true);
@@ -79,7 +85,7 @@ const App = () => {
         </Link>
       </Flex>
       <p>
-        If you used light/dark theme, just be aware of your style under specific
+        hello If you used light/dark theme, just be aware of your style under specific
         mode.
       </p>
       <Button size="sm" onClick={toggleColorMode}>
@@ -145,6 +151,8 @@ const App = () => {
                     onChange={(e) => setSingleCheck(e.currentTarget.checked)}
                   />
                 </Flex>
+
+                <Text>Heello</Text>
                 <SingleDatepicker
                   name="date-input"
                   date={date}
@@ -180,41 +188,8 @@ const App = () => {
           <TabPanel>
             <Panel>
               <Section title="Custom Styles:">
-                Custom Styles:
-                <SingleDatepicker
-                  name="date-input"
-                  date={date}
-                  onDateChange={setDate}
-                  propsConfigs={{
-                    dayOfMonthBtnProps: {
-                      defaultBtnProps: {
-                        _hover: {
-                          background: 'blue.300',
-                        },
-                      },
-                      selectedBtnProps: {
-                        background: '#0085f230',
-                      },
-                    },
-                    dateNavBtnProps: {
-                      _hover: {
-                        background: '#0085f230',
-                      },
-                    },
-                    popoverCompProps: {
-                      popoverContentProps: {
-                        background: 'gray.700',
-                        color: 'white',
-                      },
-                    },
-                    weekdayLabelProps: {
-                      fontWeight: 'normal'
-                    },
-                    dateHeadingProps: {
-                      fontWeight: 'semibold'
-                    }
-                  }}
-                />
+                Custom Styles2222:
+      
                 <RangeDatepicker
                   selectedDates={selectedDates}
                   onDateChange={setSelectedDates}
@@ -287,14 +262,8 @@ const App = () => {
                     </Button>
                   ))}
                 </HStack>
-                <SingleDatepicker
-                  name="date-input"
-                  date={date}
-                  onDateChange={setDate}
-                  configs={{
-                    firstDayOfWeek,
-                  }}
-                />
+
+
                 <RangeDatepicker
                   selectedDates={selectedDates}
                   onDateChange={setSelectedDates}
