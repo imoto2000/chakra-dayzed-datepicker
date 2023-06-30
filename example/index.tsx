@@ -16,18 +16,29 @@ const App = () => {
   const initDate = null;
   // const initDate = new Date(1999, 4, 1);
   const [date, setDate] = useState<Date | null>(mainDate);
-  const [isSingleChecked, setSingleCheck] = useState(true);
+  // const [isSingleChecked, setSingleCheck] = useState(true);
 
+
+const onDateChange = (d: Date) => {
+
+console.log(">>>>>>> d:",d);
+console.log(">>>>>>> date:",new Date(d));
+
+setDate(new Date(d));
+return new Date(d);
+}
+  
   return (
     <>
-      <Text>SingleDatepicker</Text>
+      <Text>SingleDatepicker{date && date.toString() }</Text>
 
       <SingleDatepicker
         name="date-input"
         date={date}
         initDate={initDate}
         onDateChange={setDate}
-        closeOnSelect={isSingleChecked}
+        // onDateChange={onDateChange}
+        // closeOnSelect={isSingleChecked}
       />
 
 

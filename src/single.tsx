@@ -6,6 +6,7 @@ import {
   PopoverContent,
   PopoverTrigger,
   Portal,
+  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 import { format } from 'date-fns';
@@ -131,7 +132,7 @@ export const SingleDatepicker: React.FC<SingleDatepickerProps> = ({
                 dayzedHookProps={{
                   showOutsideDays: true,
                   onDateSelected: handleOnDateSelected,
-                  selected: dateInView || initDate || new Date(),
+                  selected: selectedDate || initDate || new Date(),
                   date: dateInView || initDate || new Date(),
                   minDate: minDate,
                   maxDate: maxDate,
