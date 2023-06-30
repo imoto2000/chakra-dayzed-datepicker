@@ -128,9 +128,9 @@ export const SingleDatepicker: React.FC<SingleDatepickerProps> = ({
           <PopoverBody {...propsConfigs?.popoverCompProps?.popoverBodyProps}>
             <FocusLock>
 
-            <Text>dateInView: {dateInView && dateInView.toString() }</Text>
+            {/* <Text>dateInView: {dateInView && dateInView.toString() }</Text>
             <Text>initDate: {initDate && initDate.toString() }</Text>
-            <Text>selectedDate: {selectedDate && selectedDate.toString() }</Text>
+            <Text>selectedDate: {selectedDate && selectedDate.toString() }</Text> */}
 
             <CalendarPanel
                 dayzedHookProps={{
